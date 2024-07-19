@@ -33,17 +33,17 @@ class ListFragment : Fragment() {
         binding.rv.adapter=adapter
 
         adapter.onclick={
-            val secondFragment = DetailFragment()
+            val DetailFragment = DetailFragment()
 
             val bundle = Bundle()
             bundle.putString("city", it.city)
             bundle.putString("weather_degree", it.weather_degree)
             bundle.putString("weather", it.weather)
             bundle.putInt("image", it.icon)
-            secondFragment.arguments = bundle
+            DetailFragment.arguments = bundle
 
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView, secondFragment)
+                .replace(R.id.fragmentContainerView, DetailFragment)
                 .addToBackStack(null)
                 .commit()
         }
