@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="text">#353541</color>
     <color name="background">#E4EAF2</color>
+    <color name="cardview">#F2F5F9</color>
 </resources>
