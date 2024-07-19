@@ -11,8 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.InternTasks2A"
-        tools:targetApi="31" />
-
-    <!-- Add a launcher activity to start with-->
+        tools:targetApi="31">
+        <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListActivity"
+            android:exported="false" />
+    </application>
 
 </manifest>
