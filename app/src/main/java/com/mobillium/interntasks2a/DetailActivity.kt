@@ -12,6 +12,11 @@ class DetailActivity : AppCompatActivity() {
         binding=ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.textCity.text=intent.getStringExtra("city")
+        binding.image.setImageResource(intent.getIntExtra("image",0))
+        binding.textWeatherDegree.text=intent.getStringExtra("weather_degree")
+        binding.textWeather.text=intent.getStringExtra("weather")
+
 
     }
 }

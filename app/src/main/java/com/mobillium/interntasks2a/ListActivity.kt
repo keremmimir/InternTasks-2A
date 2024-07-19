@@ -17,6 +17,17 @@ class ListActivity : AppCompatActivity() {
         val adapter = ListAdapter(item)
         binding.rv.adapter=adapter
 
+        adapter.onclick={
+
+            val intent = Intent(this, DetailActivity::class.java).apply {
+                putExtra("city", it.city)
+                putExtra("weather_degree", it.weather_degree)
+                putExtra("weather", it.weather)
+                putExtra("image", it.icon)
+            }
+            startActivity(intent)
+        }
+
 
     }
 }
