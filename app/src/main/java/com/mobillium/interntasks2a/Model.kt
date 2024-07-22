@@ -10,7 +10,5 @@ data class Model(
     val weather_degree : String,
     val degree_range : String,
     val weather : String,
-    val icon : Int
-):
-    Parcelable {
-}
+    val image : Int
+): Parcelable

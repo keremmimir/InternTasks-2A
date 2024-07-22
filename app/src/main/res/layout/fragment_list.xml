@@ -43,4 +43,5 @@
         app:layout_constraintTop_toBottomOf="@+id/text_today"
         tools:listitem="@layout/list_row"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

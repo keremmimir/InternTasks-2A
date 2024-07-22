@@ -14,10 +14,6 @@ class DetailFragment : Fragment() {
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,13 +26,20 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.let { bundle ->
-            binding.textCity.text = bundle.getString("city")
-            binding.textWeatherDegree.text = bundle.getString("weather_degree")
-            binding.textWeather.text = bundle.getString("weather")
-            val imageResId = bundle.getInt("image", 0)
-            if (imageResId != 0) {
-                binding.image.setImageResource(imageResId)
+            with(binding){
+                textCity.text = bundle.getString(Constants.CITY)
+                textWeatherDegree.text = bundle.getString(Constants.WEATHER_DEGREE)
+                textWeather.text = bundle.getString(Constants.WEATHER)
+                val imageResId = bundle.getInt(Constants.IMAGE, Constants.DEFAULT_VALUE)
+                if (imageResId != 0) {
+                    image.setImageResource(imageResId)
+                }
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

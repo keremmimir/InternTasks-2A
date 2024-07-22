@@ -32,20 +32,24 @@ class ListFragment : Fragment() {
         val adapter = ListAdapter(item)
         binding.rv.adapter=adapter
 
-        adapter.onclick={
-            val DetailFragment = DetailFragment()
-
+        adapter.onClick = { model ->
+            val detailFragment = DetailFragment()
             val bundle = Bundle()
-            bundle.putString("city", it.city)
-            bundle.putString("weather_degree", it.weather_degree)
-            bundle.putString("weather", it.weather)
-            bundle.putInt("image", it.icon)
-            DetailFragment.arguments = bundle
+            bundle.putString(Constants.CITY, model.city)
+            bundle.putString(Constants.WEATHER_DEGREE, model.weather_degree)
+            bundle.putString(Constants.WEATHER, model.weather)
+            bundle.putInt(Constants.IMAGE, model.image)
+            detailFragment.arguments = bundle
 
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView, DetailFragment)
+                .replace(R.id.fragmentContainerView, detailFragment)
                 .addToBackStack(null)
                 .commit()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

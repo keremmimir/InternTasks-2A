@@ -250,6 +250,4 @@
         app:layout_constraintTop_toTopOf="@+id/text_date4"
         app:srcCompat="@drawable/ic_rainy" />
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
