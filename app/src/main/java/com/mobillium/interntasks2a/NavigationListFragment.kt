@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import com.mobillium.interntasks2a.databinding.FragmentDetailBinding
 import com.mobillium.interntasks2a.databinding.FragmentNavigationListBinding
@@ -28,11 +29,29 @@ class NavigationListFragment : Fragment() {
 
         val item = Repository().getWeatherItem()
         val adapter = ListAdapter(item)
-        binding.rv.adapter=adapter
+        binding.rv.adapter = adapter
 
         adapter.onClick = { model ->
-            val action = NavigationListFragmentDirections.actionNavigationListFragmentToNavigationDetailFragment(model = model)
+            val action =
+                NavigationListFragmentDirections.actionNavigationListFragmentToNavigationDetailFragment(
+                    model = model
+                )
             findNavController().navigate(action)
+        }
+
+        setFragmentResultListener(Constants.RESTFUL_API) { requestKey, bundle ->
+            val id = bundle.getInt(Constants.ID, -1)
+            val updatedDegree = bundle.getInt(Constants.UPDATE_WEATHER_DEGREE, -1)
+
+            if (id != -1 && updatedDegree != -1) {
+                val updatedModel = item.find { model->
+                    model.id == id
+                }
+                updatedModel?.let { model ->
+                    model.weather_degree = updatedDegree.toString()
+                    adapter.notifyDataSetChanged()
+                }
+            }
         }
     }
 

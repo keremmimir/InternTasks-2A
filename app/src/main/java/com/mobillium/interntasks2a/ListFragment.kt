@@ -34,11 +34,12 @@ class ListFragment : Fragment() {
 
         adapter.onClick = { model ->
             val detailFragment = DetailFragment()
-            val bundle = Bundle()
-            bundle.putString(Constants.CITY, model.city)
-            bundle.putString(Constants.WEATHER_DEGREE, model.weather_degree)
-            bundle.putString(Constants.WEATHER, model.weather)
-            bundle.putInt(Constants.IMAGE, model.image)
+            val bundle = Bundle().apply {
+                putString(Constants.CITY, model.city)
+                putString(Constants.WEATHER_DEGREE, model.weather_degree)
+                putString(Constants.WEATHER, model.weather)
+                putInt(Constants.IMAGE, model.image)
+            }
             detailFragment.arguments = bundle
 
             parentFragmentManager.beginTransaction()

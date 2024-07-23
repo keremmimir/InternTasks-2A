@@ -10,4 +10,9 @@ class Repository {
             add(Model(4, "Sakarya", "31°", "14°- 27°", "Güneşli", R.drawable.ic_sunny))
         }
     }
+
+    fun randomWeatherDegree():Int{
+        return (14..27).random()
+    }
+
 }

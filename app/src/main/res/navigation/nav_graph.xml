@@ -23,5 +23,5 @@
             android:id="@+id/action_navigationListFragment_to_navigationDetailFragment"
             app:destination="@id/navigationDetailFragment" />
     </fragment>
-    
+
 </navigation>

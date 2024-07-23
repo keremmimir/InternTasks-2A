@@ -7,7 +7,7 @@ import kotlinx.android.parcel.Parcelize
 data class Model(
     val id : Int,
     val city : String,
-    val weather_degree : String,
+    var weather_degree : String,
     val degree_range : String,
     val weather : String,
     val image : Int
