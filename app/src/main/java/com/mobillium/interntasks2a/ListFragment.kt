@@ -30,13 +30,14 @@ class ListFragment : Fragment() {
 
         val item = Repository().getWeatherItem()
         val adapter = ListAdapter(item)
-        binding.rv.adapter=adapter
+
+        binding.recyclerView.adapter=adapter
 
         adapter.onClick = { model ->
             val detailFragment = DetailFragment()
             val bundle = Bundle().apply {
                 putString(Constants.CITY, model.city)
-                putString(Constants.WEATHER_DEGREE, model.weather_degree)
+                putString(Constants.WEATHER_DEGREE, model.weatherDegree)
                 putString(Constants.WEATHER, model.weather)
                 putInt(Constants.IMAGE, model.image)
             }

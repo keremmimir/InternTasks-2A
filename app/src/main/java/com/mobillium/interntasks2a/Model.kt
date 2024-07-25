@@ -7,8 +7,8 @@ import kotlinx.android.parcel.Parcelize
 data class Model(
     val id : Int,
     val city : String,
-    var weather_degree : String,
-    val degree_range : String,
+    var weatherDegree : String,
+    val degreeRange : String,
     val weather : String,
     val image : Int
 ): Parcelable

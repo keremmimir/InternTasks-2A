@@ -14,4 +14,8 @@
     <dimen name="text_size_large">20sp</dimen>
     <dimen name="text_size_xlarge">64sp</dimen>
 
+    //button
+    <dimen name="button_radius">15dp</dimen>
+    <dimen name="button_width">2dp</dimen>
+
 </resources>

@@ -14,12 +14,13 @@ class ListActivity : AppCompatActivity() {
 
         val item = Repository().getWeatherItem()
         val adapter = ListAdapter(item)
-        binding.rv.adapter=adapter
+
+        binding.recyclerView.adapter=adapter
 
         adapter.onClick = { model->
             val intent = Intent(this, DetailActivity::class.java).apply {
                 putExtra(Constants.CITY, model.city)
-                putExtra(Constants.WEATHER_DEGREE, model.weather_degree)
+                putExtra(Constants.WEATHER_DEGREE, model.weatherDegree)
                 putExtra(Constants.WEATHER, model.weather)
                 putExtra(Constants.IMAGE, model.image)
             }

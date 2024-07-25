@@ -14,8 +14,8 @@ class ListAdapter(val data : ArrayList<Model>):RecyclerView.Adapter<ListAdapter.
             with(binding){
                 rvCity.text = model.city
                 rvWeather.text = model.weather
-                rvDegreeRange.text = model.degree_range
-                rvWeatherDegree.text = model.weather_degree
+                rvDegreeRange.text = model.degreeRange
+                rvWeatherDegree.text = model.weatherDegree
                 rvImage.setImageResource(model.image)
             }
 

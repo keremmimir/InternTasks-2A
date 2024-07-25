@@ -29,7 +29,8 @@ class NavigationListFragment : Fragment() {
 
         val item = Repository().getWeatherItem()
         val adapter = ListAdapter(item)
-        binding.rv.adapter = adapter
+
+        binding.recyclerView.adapter = adapter
 
         adapter.onClick = { model ->
             val action =
@@ -48,7 +49,7 @@ class NavigationListFragment : Fragment() {
                     model.id == id
                 }
                 updatedModel?.let { model ->
-                    model.weather_degree = updatedDegree.toString()
+                    model.weatherDegree = updatedDegree.toString()
                     adapter.notifyDataSetChanged()
                 }
             }

@@ -35,7 +35,7 @@ class NavigationDetailFragment : Fragment() {
 
         with(binding){
             textCity.text = args.model.city
-            textWeatherDegree.text = args.model.weather_degree
+            textWeatherDegree.text = args.model.weatherDegree
             textWeather.text = args.model.weather
             image.setImageResource(args.model.image)
         }
