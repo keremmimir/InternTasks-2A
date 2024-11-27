@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigationListFragment">
+
+    <fragment
+        android:id="@+id/navigationDetailFragment"
+        android:name="com.mobillium.interntasks2a.NavigationDetailFragment"
+        android:label="fragment_navigation_detail"
+        tools:layout="@layout/fragment_navigation_detail" >
+        <argument
+            android:name="model"
+            app:argType="com.mobillium.interntasks2a.Model" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigationListFragment"
+        android:name="com.mobillium.interntasks2a.NavigationListFragment"
+        android:label="fragment_navigation_list"
+        tools:layout="@layout/fragment_navigation_list" >
+        <action
+            android:id="@+id/action_navigationListFragment_to_navigationDetailFragment"
+            app:destination="@id/navigationDetailFragment" />
+    </fragment>
+
+</navigation>
